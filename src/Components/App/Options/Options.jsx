@@ -1,5 +1,5 @@
 export default function Options({updateFeedback, reset, good, neutral, bad}) {
-    const shouldShowReset = good > 1 || neutral > 1 || bad > 1;
+    const shouldShowReset = good >= 1 || neutral >= 1 || bad >= 1;
   return (
     <>
     <button onClick={() => updateFeedback('good')}>Good</button>
