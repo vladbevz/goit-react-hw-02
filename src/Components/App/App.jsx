@@ -15,15 +15,15 @@ export default function App() {
     setData({...data, [feedbackType]: data[feedbackType] + 1})
   }
   const totalFeedback = data.good + data.neutral + data.bad;
-  
+  const percentOfGood = Math.round((data.good / totalFeedback) * 100)
     
 
 
   return (
     <>
     <Description/>
-    <Options updateFeedback={updateFeedback} reset={resetFeedback}/>
-    <Feedback good={data.good} neutral={data.neutral} bad={data.bad} total={totalFeedback} />
+    <Options updateFeedback={updateFeedback} reset={resetFeedback} good={data.good} neutral={data.neutral} bad={data.bad} />
+    <Feedback good={data.good} neutral={data.neutral} bad={data.bad} total={totalFeedback} percent={percentOfGood} />
     <Notification total={totalFeedback}/>
     </>
   )

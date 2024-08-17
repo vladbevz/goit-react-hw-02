@@ -1,4 +1,4 @@
-export default function Feedback({good, neutral, bad, total}) {
+export default function Feedback({good, neutral, bad, total, percent}) {
     if(total > 0){
         return (
             <>
@@ -6,7 +6,7 @@ export default function Feedback({good, neutral, bad, total}) {
             <p>Neutral:{neutral}</p>
             <p>Bad:{bad}</p>
             <p>Total:{total}</p>
-            <p>Positive:</p>
+            <p>Positive:{percent}</p>
             </>
         )
     }
