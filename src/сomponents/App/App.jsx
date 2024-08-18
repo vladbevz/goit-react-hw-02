@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import './App.module.css'
-import Description from './Description/Description'
-import Feedback from './Feedback/Feedback'
-import Options from './Options/Options'
-import Notification from './Notification/Notification'
+import Description from '../Description/Description'
+import Feedback from '../Feedback/Feedback'
+import Options from '../Options/Options'
+import Notification from '../Notification/Notification'
 
 const getInitialData = () => {
   const savedData = window.localStorage.getItem('my-data');
