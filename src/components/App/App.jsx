@@ -8,7 +8,7 @@ import Notification from '../Notification/Notification'
 const getInitialData = () => {
   const savedData = window.localStorage.getItem('my-data');
   // console.log(savedData)
-  return savedData !== null ? JSON.parse(savedData): 0;
+  return savedData !== null ? JSON.parse(savedData): { good: 0, neutral: 0, bad: 0 };
 }
 
 export default function App() {
@@ -33,8 +33,15 @@ export default function App() {
     <>
     <Description/>
     <Options updateFeedback={updateFeedback} reset={resetFeedback} total={totalFeedback} />
-    <Feedback good={data.good} neutral={data.neutral} bad={data.bad} total={totalFeedback} percent={percentOfGood} />
-    <Notification total={totalFeedback}/>
+
+    {totalFeedback > 0 ? (
+        <Feedback good={data.good} neutral={data.neutral} bad={data.bad} total={totalFeedback} percent={percentOfGood} />
+      ) : (
+        <Notification />
+      )}
+
+    
+    
     </>
   )
 }
